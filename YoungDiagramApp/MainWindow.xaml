@@ -1,0 +1,29 @@
+﻿<Window x:Class="YoungDiagramApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:YoungDiagramApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="10">
+            <ScrollViewer Height="300" VerticalScrollBarVisibility="Auto">
+                <Canvas Name="DiagramCanvas" Background="Bisque" Height="300">
+                    <TextBlock Text="Area for diagram" 
+                   Canvas.Right="50" 
+                   Canvas.Top="20" 
+                   FontSize="16" 
+                   Foreground="Pink" 
+                   FontWeight="Bold" />
+                </Canvas>
+            </ScrollViewer>
+
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBox Name="NumberInput" Width="100" Margin="5" Text=""/>
+                <Button Name="AddNumberButton" Content="add number" Width="100" Click="AddNumberButton_Click"/>
+                <Button x:Name="ClearDiagramButton" Content="Clear" Width="120" Click="ClearDiagramButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
