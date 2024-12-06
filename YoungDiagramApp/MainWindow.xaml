@@ -21,8 +21,9 @@
 
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBox Name="NumberInput" Width="100" Margin="5" Text=""/>
-                <Button Name="AddNumberButton" Content="add number" Width="100" Click="AddNumberButton_Click"/>
+                <Button Name="AddNumberButton" Content="add number" Width="100" Click="AddNumberButton_Click" IsDefault="True"/>
                 <Button x:Name="ClearDiagramButton" Content="Clear" Width="120" Click="ClearDiagramButton_Click"/>
+                <TextBlock Text="You can add a number using the Enter button." FontSize="16" Margin="5" Foreground="Red" />
             </StackPanel>
         </StackPanel>
     </Grid>
