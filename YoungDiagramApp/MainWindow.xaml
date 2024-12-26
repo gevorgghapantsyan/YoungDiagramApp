@@ -6,25 +6,28 @@
         xmlns:local="clr-namespace:YoungDiagramApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <StackPanel Orientation="Vertical" Margin="10">
-            <ScrollViewer Height="300" VerticalScrollBarVisibility="Auto">
-                <Canvas Name="DiagramCanvas" Background="Bisque" Height="300">
-                    <TextBlock Text="Area for diagram" 
-                   Canvas.Right="50" 
-                   Canvas.Top="20" 
-                   FontSize="16" 
-                   Foreground="Pink" 
-                   FontWeight="Bold" />
-                </Canvas>
-            </ScrollViewer>
 
-            <StackPanel Orientation="Horizontal" Margin="5">
-                <TextBox Name="NumberInput" Width="100" Margin="5" Text=""/>
-                <Button Name="AddNumberButton" Content="add number" Width="100" Click="AddNumberButton_Click" IsDefault="True"/>
-                <Button x:Name="ClearDiagramButton" Content="Clear" Width="120" Click="ClearDiagramButton_Click"/>
-                <TextBlock Text="You can add a number using the Enter button." FontSize="16" Margin="5" Foreground="Red" />
-            </StackPanel>
-        </StackPanel>
-    </Grid>
+	<Grid Name="myGrid">
+		<StackPanel Orientation="Vertical" Margin="10">
+			<ScrollViewer Height="300" VerticalScrollBarVisibility="Auto">
+				<Canvas x:Name="DiagramCanvas" Background="Bisque" Height="300">
+					<TextBlock Text="Area for diagram"
+                   Canvas.Right="50"
+                   Canvas.Top="20"
+                   FontSize="16"
+                   Foreground="Pink"
+                   FontWeight="Bold" />
+				</Canvas>
+			</ScrollViewer>
+
+			<StackPanel Orientation="Horizontal" Margin="5">
+				<TextBox Name="NumberInput" Width="100" Margin="5" Text=""/>
+				<Button Name="AddNumberButton" Content="add number" Width="100" Click="AddNumberButton_Click" IsDefault="True"/>
+				<Button x:Name="ClearDiagramButton" Content="Clear" Width="120" Click="ClearDiagramButton_Click"/>
+				<Slider Name="SpeedSlider" Minimum="0.1" Maximum="5" Value="1" HorizontalAlignment="Left" Margin="10" VerticalAlignment="Top" Width="200" ValueChanged="SpeedSlider_ValueChanged"/>
+				<TextBlock Text="Animation Speed" VerticalAlignment="Top" Width="100" Height="50" Foreground="Black" FontWeight="Bold" />
+				
+			</StackPanel>
+		</StackPanel>
+	</Grid>
 </Window>
