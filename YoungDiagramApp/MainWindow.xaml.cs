@@ -44,6 +44,11 @@ namespace YoungDiagramApp
             try
             {
                 int number = Convert.ToInt32(NumberInput.Text);
+                if (number <= 0)
+                {
+                    MessageBox.Show("Please input a positive number.");
+                    return; 
+                }
                 AddNumber(_diagram, number);
                 DrawDiagram();
             }
@@ -51,7 +56,8 @@ namespace YoungDiagramApp
             {
                 MessageBox.Show($"Please input integer:\n {ex.Message}");
             }
-            NumberInput.Clear();
+            finally { NumberInput.Clear(); }
+           
         }
 
         private void AddNumber(List<List<int>> diagram, int number)
@@ -156,7 +162,7 @@ namespace YoungDiagramApp
                             To = Colors.Red, 
                             Duration = new Duration(TimeSpan.FromSeconds(2)), 
                             AutoReverse = true,
-                            //RepeatBehavior = RepeatBehavior.Forever
+                            
                         };
                         Storyboard.SetTarget(colorAnimation, rect); 
                         Storyboard.SetTargetProperty(colorAnimation, new PropertyPath("Stroke.Color"));
